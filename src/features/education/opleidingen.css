@@ -1,0 +1,876 @@
+.education-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.education-hero {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.education-timeline {
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.education-item {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.education-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(59, 130, 246, 0.2);
+  background: var(--surface-light);
+}
+
+.education-date {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.education-date .year {
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.education-date .status,
+.education-date .duration {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Status badges styling voor verschillende statussen in de date badge
+ * - Kleurcodering per status
+ */
+.education-date .status-bezig {
+  background: rgba(250, 204, 21, 0.10);
+  color: #facc15;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 0.8rem;
+  border: 1px solid rgba(250, 204, 21, 0.30);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.education-date .status-afgebroken {
+  background: rgba(239, 68, 68, 0.10);
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 0.8rem;
+  border: 1px solid rgba(239, 68, 68, 0.30);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.education-date .status-afgerond {
+  background: rgba(16, 185, 129, 0.10);
+  color: #10b981;
+  padding: 0.5rem 1.125rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  display: inline-block;
+  font-size: 0.8125rem;
+  border: 1px solid rgba(16, 185, 129, 0.30);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.education-content {
+  padding: 0;
+}
+
+.content-header {
+  margin-bottom: 1.5rem;
+}
+
+.content-header h3 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.institution {
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.level {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 0.5rem 1.125rem;
+  border-radius: var(--radius-full);
+  margin-top: 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  font-weight: 500;
+}
+
+.content-body {
+  margin-top: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.education-description {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.education-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Vaardigheden tags styling
+ * - Moderne pill-vormige tags
+ * - Interactieve hover effecten
+ * - Consistente typografie
+ */
+.skill-tag {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Hover effect voor skill tags
+ * - Kleurverandering voor interactiviteit
+ * - Subtiele lift animatie
+ */
+.skill-tag:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+/* Statistieken sectie
+ * - Flexibele layout voor statistieken
+ * - Subtiele scheiding van content
+ * - Responsieve spatiëring
+ */
+.education-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+  gap: 2rem;
+}
+
+/* Container voor individuele statistiek
+ * - Centrale uitlijning voor visuele balans
+ */
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+/* Numerieke waarde styling
+ * - Bold gewicht voor emphasis
+ * - Accent kleur voor visuele hiërarchie
+ */
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+/* Label styling voor statistieken
+ * - Subtiele tekstkleur
+ * - Optimale leesbaarheid
+ */
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.reason-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(239, 68, 68, 0.06);
+  border-left: 3px solid #ef4444;
+  border-radius: var(--radius-md);
+}
+
+.reason-section h4 {
+  font-size: 1rem;
+  color: #ef4444;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.reason-section p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-container {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+
+  .education-item {
+    padding: 1.5rem;
+  }
+
+  .education-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .education-date {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .education-item {
+    padding: 1.25rem;
+  }
+}
+}
+
+@media (max-width: 480px) {
+  .education-content {
+    padding: 1.5rem;
+  }
+
+  .education-title {
+    font-size: 1.3rem;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+
+  .education-skills {
+    justify-content: center;
+  }
+}
+
+/* Content header styling 
+ * - Hiërarchische structuur voor titels
+ */
+.content-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(33, 150, 243, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.content-header h3 {
+  font-size: 1.8rem;
+  color: #00d9ff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.content-header .institution {
+  display: block;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.content-header .level {
+  display: inline-block;
+  background: rgba(33, 150, 243, 0.1);
+  color: #00d9ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Content body styling - container voor alle content secties */
+.content-body {
+  margin-top: 1.5rem;
+}
+
+.content-body > * {
+  margin-bottom: 2rem;
+}
+
+.content-body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Description styling */
+.description {
+  color: #444;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+/* Reason section - voor reden van stoppen */
+.reason-section {
+  background: rgba(239, 68, 68, 0.06);
+  padding: 1rem;
+  border-left: 3px solid #ef4444;
+  margin: 1.5rem 0;
+  border-radius: 5px;
+}
+
+.reason-section h4 {
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reason-section p {
+  color: #666;
+  margin: 0;
+}
+
+/* Options section - opleidingsmogelijkheden */
+.options-section {
+  margin: 1.5rem 0;
+}
+
+.options-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+}
+
+.options-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.options-section li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.options-section li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #00d9ff;
+  font-weight: bold;
+}
+
+/* Subjects section - vakken en docenten */
+.subjects-section {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: rgba(33, 150, 243, 0.02);
+  border-radius: 12px;
+}
+
+.subjects-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.subject-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border-left: 4px solid #00d9ff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.subject-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card strong {
+  display: block;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.subject-card .subject-level {
+  display: block;
+  color: #00d9ff;
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+}
+
+.subject-card .teacher {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Tech section - technologieën */
+.tech-section {
+  margin: 2rem 0;
+}
+
+.tech-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Schedule section - rooster info */
+.schedule-section {
+  background: rgba(33, 150, 243, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2.5rem 0;
+  border: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.schedule-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.schedule-info p {
+  color: #444;
+  margin: 0.8rem 0;
+  padding-left: 1rem;
+  font-size: 1.02rem;
+}
+
+.schedule-info strong {
+  color: #00d9ff;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Internships section - stagemogelijkheden */
+.internships-section {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: rgba(76, 175, 80, 0.02);
+  border-radius: 12px;
+}
+
+.internships-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.internship-timing {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.internships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.internship-card {
+  background: var(--surface);
+  padding: 1.3rem;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(59, 130, 246, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.internship-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-md);
+  background: var(--surface-light);
+}
+
+.internship-card i {
+  color: #00d9ff;
+}
+
+/* Highlights section - belangrijke aspecten */
+.highlights-section {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: rgba(76, 175, 80, 0.02);
+  border-radius: 12px;
+}
+
+.highlights-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlights-list {
+  list-style: none;
+  padding: 0;
+}
+
+.highlights-list li {
+  padding: 1.1rem;
+  margin-bottom: 0.8rem;
+  background: white;
+  border-left: 4px solid #4CAF50;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.highlights-list li i {
+  color: #4CAF50;
+  min-width: 20px;
+}
+
+/* Learning methods section - leermethodes */
+.learning-section {
+  margin: 2rem 0;
+}
+
+.learning-section h4 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.learning-card {
+  background: linear-gradient(135deg, #00d9ff 0%, #22d3ee 100%);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.learning-card i {
+  font-size: 1.5rem;
+}
+
+/* Extra info section - voor Scrum en Kwalificatiedossier */
+.extra-info-section {
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(33, 150, 243, 0.1);
+}
+
+.info-header i {
+  font-size: 2rem;
+  color: #00d9ff;
+}
+
+.info-header h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.info-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Qualification sections - kwalificatiedossier items */
+.qualification-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.qual-item {
+  padding: 1rem;
+  background: rgba(33, 150, 243, 0.05);
+  border-radius: 8px;
+}
+
+.qual-item h4 {
+  color: #00d9ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.qual-item p {
+  margin: 0;
+  color: #666;
+}
+
+/* Software Development Details Section - Aparte sectie buiten timeline */
+.software-dev-details {
+  max-width: 1400px;
+  margin: 6rem auto 4rem;
+  padding: 0 2rem;
+}
+
+.details-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.details-header h2 {
+  font-size: 2.2rem;
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.details-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.detail-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.detail-card h3 {
+  color: #00d9ff;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 2px solid rgba(33, 150, 243, 0.1);
+  padding-bottom: 1rem;
+}
+
+.schedule-detail {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, rgba(0, 188, 212, 0.05) 100%);
+  border: 2px solid rgba(33, 150, 243, 0.1);
+}
+
+/* Responsive voor details sectie */
+@media (max-width: 768px) {
+  .software-dev-details {
+    padding: 0 1rem;
+    margin: 4rem auto 2rem;
+  }
+
+  .details-header h2 {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .detail-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===== Education Theme (Purple) ===== */
+
+/* Option A — Purple */
+.education-theme-purple .year,
+.education-theme-purple .institution,
+.education-theme-purple .stat-value,
+.education-theme-purple .options-section h4,
+.education-theme-purple .subjects-section h4,
+.education-theme-purple .subject-card .subject-level,
+.education-theme-purple .options-section li::before { color: #8b5cf6; }
+
+.education-theme-purple .level {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.education-theme-purple .education-item:hover { border-color: rgba(139, 92, 246, 0.20); }
+
+.education-theme-purple .education-date .status-afgerond {
+  background: rgba(16, 185, 129, 0.10);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.30);
+}
+
+.education-theme-purple .subject-card { border-left-color: #8b5cf6; }
+
+/* Cyan theme removed per user choice */
+
+/* Force titles and level badges to neutral (black) for readability */
+.education-container .content-header h3 {
+  color: var(--text) !important;
+}
+
+.education-container .institution {
+  color: var(--text) !important;
+}
+
+.education-container .level {
+  color: var(--text) !important;
+  background: rgba(15, 23, 42, 0.06) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Theme the Kwalificatiedossier cards and info headers (purple) */
+
+.education-theme-purple .info-header { border-bottom: 2px solid rgba(139, 92, 246, 0.12); }
+.education-theme-purple .info-header i { color: #8b5cf6; }
+.education-theme-purple .qual-item { background: rgba(139, 92, 246, 0.06); }
+.education-theme-purple .qual-item h4 { color: #8b5cf6; }

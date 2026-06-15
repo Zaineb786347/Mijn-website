@@ -1,0 +1,171 @@
+/* Base Typography */
+body {
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bold text uses the site display font site-wide */
+strong,
+b,
+.font-bold {
+  font-family: var(--font-display);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Paragraphs and Lists */
+p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  max-width: 75ch;
+}
+
+ul, ol {
+  margin-bottom: 1.25rem;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-base {
+  font-family: var(--font-base);
+}
+
+.font-regular {
+  font-weight: var(--regular);
+}
+
+.font-medium {
+  font-weight: var(--medium);
+}
+
+.font-semibold {
+  font-weight: var(--semibold);
+}
+
+.font-bold {
+  font-weight: var(--bold);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}

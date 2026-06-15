@@ -1,0 +1,197 @@
+.contact-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+.contact-header .section-subtitle {
+  color: var(--text-light);
+  font-size: 1.125rem;
+  margin: 0.75rem auto 2.5rem;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.125rem 2.75rem;
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-colored);
+}
+
+.cv-download-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 24px 48px -12px rgba(59, 130, 246, 0.35);
+}
+
+.cv-download-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-item {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.contact-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(59, 130, 246, 0.2);
+  background: var(--surface-light);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.contact-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.contact-link-text {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-description {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.contact-social {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.contact-social h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.social-links-large {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-link-card {
+  background: var(--surface);
+  padding: 2.5rem 3.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.social-link-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  color: var(--primary-light);
+  border-color: rgba(59, 130, 246, 0.2);
+  background: var(--surface-light);
+}
+
+.social-icon-large {
+  font-size: 3.5rem;
+}
+
+.social-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-links-large {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-link-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .contact-item {
+    padding: 2rem;
+  }
+}

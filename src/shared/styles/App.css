@@ -1,0 +1,141 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.75) rgba(15, 23, 42, 0.12);
+}
+
+/* Scrollbar styling that matches the site palette */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.12);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #334155 0%, #0f172a 100%);
+  border-radius: 999px;
+  border: 2px solid rgba(248, 250, 252, 0.55);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1e293b 0%, #020617 100%);
+  background-clip: padding-box;
+}
+
+body {
+  font-family: var(--font-base);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  padding-top: calc(var(--nav-height) + 0.5rem);
+}
+
+/* Page sections - consistent spacing */
+.page-section {
+  min-height: calc(100vh - var(--nav-height));
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  background: transparent;
+}
+
+/* Scroll margin for anchor links */
+* {
+  scroll-margin-top: calc(var(--nav-height) + 2rem);
+}
+
+/* Common styles for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  color: #1f2937;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Container styles */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Selection styles */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth transitions for links */
+a {
+  transition: all var(--transition-normal);
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .footer {
+    display: none;
+  }
+}
