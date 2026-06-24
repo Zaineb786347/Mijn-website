@@ -7,8 +7,7 @@ node_modules/
 /coverage
 
 # Production
-/build
-/dist
+# /dist is built by Vercel, not committed
 
 # Misc
 .DS_Store

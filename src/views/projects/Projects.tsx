@@ -3,7 +3,7 @@ import './projecten.css';
 import portfolioImg from '../../assets/img/portfolio.png';
 import aiImg from '../../assets/img/ai.png';
 import tuvaluImg from '../../assets/img/tuvalu.png';
-import { useScrollReveal } from '../../shared/hooks/useScrollReveal';
+import { useScrollReveal } from '../../controllers/useScrollReveal';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('Alle');
@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
       technologies: ["React", "TypeScript", "AI"],
       status: "Afgerond",
       category: ["AI", "Vibe Coding"],
-      link: "http://localhost:3001/"
+      link: "https://subtle-pudding-5db81c.netlify.app/"
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
       technologies: ["React", "Web Design", "Tourism"],
       status: "Afgerond",
       category: ["Web", "Vibe Coding"],
-      link: "http://localhost:3000/"
+      link: "https://tuvalu-tourism-bh35rvqed-zaineb786347s-projects.vercel.app/"
     },
     
   ];
@@ -78,21 +78,21 @@ const Projects: React.FC = () => {
             key={project.id} 
             className="project-card"
             style={{ animationDelay: `${index * 0.1}s` }}
+            onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
           >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} className="project-image" />
               <div className="project-overlay">
-                <a
-                  href={project.link && project.link !== '#' ? project.link : (project.image as unknown as string)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
                   className="view-project-btn"
+                  onClick={(e) => { e.stopPropagation(); window.open(project.link, '_blank', 'noopener,noreferrer'); }}
                 >
                   Bekijk Project
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
             

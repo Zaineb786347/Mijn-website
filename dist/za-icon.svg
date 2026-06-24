@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#0f172a"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <g fill="#ffffff" font-family="Inter, 'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="32" text-anchor="middle" dominant-baseline="middle">
+    <text x="50%" y="52%">ZA</text>
+  </g>
+</svg>

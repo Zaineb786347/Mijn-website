@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './shared/components/Navbar';
-import Home from './features/home/Home';
-import AboutMe from './features/about/AboutMe';
-import Education from './features/education/Education';
-import Career from './features/career/Career';
-import Projects from './features/projects/Projects';
-import Contact from './features/contact/Contact';
-import NotFound from './features/not-found/NotFound';
+import Home from './views/home/Home';
+import AboutMe from './views/about/AboutMe';
+import Education from './views/education/Education';
+import Career from './views/career/Career';
+import Projects from './views/projects/Projects';
+import Contact from './views/contact/Contact';
+import NotFound from './views/not-found/NotFound';
 import Footer from './shared/components/Footer';
 
 import './shared/styles/App.css';
