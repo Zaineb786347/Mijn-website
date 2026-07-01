@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
       technologies: ["React", "Web Design", "Tourism"],
       status: "Afgerond",
       category: ["Web", "Vibe Coding"],
-      link: "https://tuvalu-tourism-bh35rvqed-zaineb786347s-projects.vercel.app/"
+      link: ""
     },
     
   ];
@@ -72,27 +72,42 @@ const Projects: React.FC = () => {
         </div>
       </header>
       
+      {filteredProjects.length === 0 ? (
+        <div ref={gridRef} className={`projects-empty ${gridVisible ? 'reveal-visible' : ''}`}>
+          <div className="coming-soon-box">
+            <span className="coming-soon-icon">🚧</span>
+            <h3>Binnenkort beschikbaar</h3>
+            <p>Deze projecten zijn momenteel nog in ontwikkeling. Kom later terug!</p>
+          </div>
+        </div>
+      ) : (
       <div ref={gridRef} className={`projects-grid style-cinema ${gridVisible ? 'reveal-visible' : ''}`}>
         {filteredProjects.map((project, index) => (
           <article 
             key={project.id} 
             className="project-card"
             style={{ animationDelay: `${index * 0.1}s` }}
-            onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+            onClick={() => project.link && window.open(project.link, '_blank', 'noopener,noreferrer')}
           >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} className="project-image" />
               <div className="project-overlay">
-                <button
-                  type="button"
-                  className="view-project-btn"
-                  onClick={(e) => { e.stopPropagation(); window.open(project.link, '_blank', 'noopener,noreferrer'); }}
-                >
-                  Bekijk Project
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
+                {project.link ? (
+                  <button
+                    type="button"
+                    className="view-project-btn"
+                    onClick={(e) => { e.stopPropagation(); window.open(project.link, '_blank', 'noopener,noreferrer'); }}
+                  >
+                    Bekijk Project
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                ) : (
+                  <span className="view-project-btn" style={{ opacity: 0.5, cursor: 'not-allowed' }}>
+                    Binnenkort beschikbaar
+                  </span>
+                )}
               </div>
             </div>
             
@@ -115,6 +130,7 @@ const Projects: React.FC = () => {
           </article>
         ))}
       </div>
+      )}
     </div>
   );
 };
