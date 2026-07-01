@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="/za-brand.svg" alt="" className="navbar-logo-icon" aria-hidden="true" />
+          <img src={`${import.meta.env.BASE_URL}za-brand.svg`} alt="" className="navbar-logo-icon" aria-hidden="true" />
         </Link>
         
         <button 
