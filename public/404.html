@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zaineb Adalat - Portfolio</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // Redirects a deep-link 404 back to index.html while preserving the route.
+      // segmentCount = 1 because the site is served from /<repo>/ on GitHub Pages.
+      var segmentCount = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + segmentCount)
+            .join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(segmentCount)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
