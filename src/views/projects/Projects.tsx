@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
       technologies: ["React", "Web Design", "Tourism"],
       status: "Afgerond",
       category: ["Web", "Vibe Coding"],
-      link: ""
+      link: "https://zaineb786347.github.io/Tuvalu-Tourism/"
     },
     
   ];
